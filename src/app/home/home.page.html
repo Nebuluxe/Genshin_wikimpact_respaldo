@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div align="center">
+    <div align="center" style="width: 200px">
+      <img  id="LogoWikiHome" src="/assets/images/GenshinWikiLogoNegro.png"/>
+    </div>
+    <img src="/assets/images/Paimon.png"/>
+  </div>
+
+  <br/><br/><br/><br/>
+  <ion-card>
+    <ion-card color="light">
+      <ion-card>
+        <br/>
+        <br/>
+        <div align="center" [routerLink]="['/simulador-deseos']">
+          <img id="homeOptions" src="/assets/images/SimulacionDeseos.png" style="width: 40%"/> 
+          <h3>Gacha</h3>
+        </div>
+        <br/>
+        <div align="center" [routerLink]="['/inventario']">
+          <img id="homeOptions" src="/assets/images/Inventario.png" style="width: 40%"/> 
+          <h3>Inventario</h3>
+        </div>
+        <br/>
+        <div align="center" [routerLink]="['/enemigos']">
+          <img id="homeOptions" src="/assets/images/Enemigos.png" style="width: 40%"/> 
+          <h3>Enemigos</h3>
+        </div>
+        <br/>
+        <div align="center" [routerLink]="['/elementos']">
+          <img id="homeOptions" src="/assets/images/Elementos.png" style="width: 40%"/> 
+          <h3>Elementos</h3>
+        </div>
+        <br/>
+        <br/>
+      </ion-card>
+    </ion-card>
+  </ion-card>
+</ion-content>
+
+  

@@ -1,0 +1,88 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title >Ajustes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle><ion-icon name="color-palette-outline"></ion-icon> Tema</ion-card-subtitle>
+        <label>Escoge un tema base</label>
+      </ion-card-header>
+      <ion-item>
+        <ion-icon slot="start" name="moon"></ion-icon>
+        <ion-label>Dark Theme</ion-label>
+        <ion-toggle id="dark_mode" slot="end" (ionChange)='toggleTheme($event)'></ion-toggle>
+      </ion-item>
+      
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle><ion-icon name="brush-outline"></ion-icon> Color de acento</ion-card-subtitle>
+        <label>Escoge un color</label>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle><ion-icon name="globe-outline"></ion-icon> Lenguajes</ion-card-subtitle>
+        <label>Escoge un lenguaje</label>
+      </ion-card-header>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle><ion-icon name="build-outline"></ion-icon> Otros</ion-card-subtitle>
+        <label>Ajustes generales</label>
+      </ion-card-header>
+
+      <ion-item>
+        <ion-label>Detalle de los personajes</ion-label>
+        <ion-toggle slot="end" (ionChange)='DetallePJ($event, DetallePersonaje)'></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Detalle de las armas</ion-label>
+        <ion-toggle slot="end" ></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Presionar una vez para salir</ion-label>
+        <ion-toggle slot="end" ></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Usar el mapa oficial</ion-label>
+        <ion-toggle slot="end" ></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Usar formato 24 horas</ion-label>
+        <ion-toggle slot="end" ></ion-toggle>
+      </ion-item>
+      
+      <ion-list>
+        <ion-select interface="popover" placeholder="Servidor donde juegas">
+          <ion-select-option value="apples">Latam</ion-select-option>
+          <ion-select-option value="oranges">USA</ion-select-option>
+          <ion-select-option value="bananas">China</ion-select-option>
+        </ion-select>
+      </ion-list>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle><ion-icon name="information-circle-outline"></ion-icon> Acerca de </ion-card-subtitle>
+        <label>Color de acento</label>
+      </ion-card-header>
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle><ion-icon name="information-circle-outline"></ion-icon> Creditos</ion-card-subtitle>
+        <label>Traductores</label>
+      </ion-card-header>
+    </ion-card>
+</ion-content>

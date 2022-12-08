@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{DetallePersonaje.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/portrait.png"/>
+      <ion-card id="{{Personajeid.params.ID}}">
+        <ion-card color="light">
+          <ion-card>
+            <ion-card-header >
+              <ion-card-title align="center">{{DetallePersonaje.name}}</ion-card-title>
+              <div [ngSwitch]="Personajeid.params.ID">
+                <div *ngSwitchCase="'traveler-anemo'">
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-aether.png"/>
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-lumine.png"/>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'traveler-dendro'">
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-aether.png"/>
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-lumine.png"/>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'traveler-electro'">
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-aether.png"/>
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-lumine.png"/>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'traveler-geo'">
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-aether.png"/>
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-lumine.png"/>
+                  </div>
+                </div>
+                <div *ngSwitchDefault>
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side.png"/>
+                  </div>
+                </div>
+              </div>
+              <ion-card-subtitle align="center">{{DetallePersonaje.title}}</ion-card-subtitle>
+              <ion-card-subtitle align="center">{{DetallePersonaje.affiliation}}</ion-card-subtitle>
+              <div align="center" (click)="goToElementosDetails(DetallePersonaje.vision)" id="CardAnimation">
+                <img src= "/assets/ElementsDetalle/{{DetallePersonaje.vision}}/icon.png"/>
+              </div>
+              <ion-card-subtitle>Vision: {{DetallePersonaje.vision}}</ion-card-subtitle>
+              <ion-card-subtitle>Arma: {{DetallePersonaje.weapon}}</ion-card-subtitle>
+              <ion-card-subtitle>Nacion: {{DetallePersonaje.nation}}</ion-card-subtitle>
+              <ion-card-subtitle>Cumpleaños: {{DetallePersonaje.birthday}}</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-card>
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title align="center">Talentos</ion-card-title>
+          </ion-card-header>
+          <ion-card *ngFor="let item of DetallePersonaje.skillTalents">
+            <ion-card-header>
+              <div class="img-container">
+                <img *ngIf="item.type=='NORMAL_ATTACK'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/talent-na.png"/>
+                <img *ngIf="item.type=='ELEMENTAL_SKILL'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/talent-skill.png"/>
+                <img *ngIf="item.type=='ELEMENTAL_BURST'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/talent-burst.png"/>
+              
+                <ion-text>
+                  <h3>{{item.name}}</h3>
+                  <ion-card-subtitle>{{item.type}}</ion-card-subtitle>
+                </ion-text>
+              </div>
+              <ion-card-content>
+                {{item.description}}
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </ion-card>
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title align="center">Talentos Pasivos</ion-card-title>
+          </ion-card-header>
+          <ion-card *ngFor="let item of DetallePersonaje.passiveTalents">
+            <ion-card-header>
+              <div class="img-container">
+                <img *ngIf="item.unlock=='Unlocked at Ascension 1'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/talent-passive-1.png"/>
+                <img *ngIf="item.unlock=='Unlocked at Ascension 4'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/talent-passive-2.png"/>
+                <img *ngIf="item.unlock=='Unlocked Automatically'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/talent-passive-0.png"/>
+              
+                <ion-text>
+                  <h3>{{item.name}}</h3>
+                  <ion-card-subtitle>{{item.unlock}}</ion-card-subtitle>
+                </ion-text>
+              </div>
+              <ion-card-content>
+                {{item.description}}
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </ion-card>
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title align="center">Constelaciones</ion-card-title>
+          </ion-card-header>
+          <ion-card *ngFor="let item of DetallePersonaje.constellations">
+            <ion-card-header>
+              <div class="img-container">
+                <img *ngIf="item.unlock=='Constellation Lv. 1'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/constellation-1.png"/>
+                <img *ngIf="item.unlock=='Constellation Lv. 2'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/constellation-2.png"/>
+                <img *ngIf="item.unlock=='Constellation Lv. 3'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/constellation-3.png"/>
+                <img *ngIf="item.unlock=='Constellation Lv. 4'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/constellation-4.png"/>
+                <img *ngIf="item.unlock=='Constellation Lv. 5'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/constellation-5.png"/>
+                <img *ngIf="item.unlock=='Constellation Lv. 6'" src="/assets/PersonajesImages/{{Personajeid.params.ID}}/constellation-6.png"/>
+                <ion-text>
+                  <h3>{{item.name}}</h3>
+                  <ion-card-subtitle>{{item.unlock}}</ion-card-subtitle>
+                </ion-text>
+              </div>
+              <ion-card-content>
+                {{item.description}}
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </ion-card>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

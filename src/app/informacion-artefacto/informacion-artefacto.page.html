@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{Artefactoid.params.ID}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div [ngSwitch]="Artefactoid.params.ID">
+    <div *ngSwitchCase="'prayers-for-destiny'" align="center">
+      <ion-row>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/circlet-of-logos.png"/>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngSwitchCase="'prayers-for-illumination'" align="center">
+      <ion-row>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/circlet-of-logos.png"/>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngSwitchCase="'prayers-for-wisdom'" align="center">
+      <ion-row >
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/circlet-of-logos.png"/>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngSwitchCase="'prayers-to-springtime'" align="center">
+      <ion-row>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/circlet-of-logos.png"/>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngSwitchCase="'prayers-to-the-firmament'" align="center">
+      <ion-row>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/circlet-of-logos.png"/>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngSwitchDefault>
+      <ion-row>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/circlet-of-logos.png"/>
+        </ion-col>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/flower-of-life.png"/>
+        </ion-col>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/goblet-of-eonothem.png"/>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/plume-of-death.png"/>
+        </ion-col>
+        <ion-col>
+          <img src="/assets/ArtefactosImages/{{Artefactoid.params.ID}}/sands-of-eon.png"/>
+        </ion-col>
+      </ion-row>
+    </div>  
+  </div>
+  <ion-card>
+    <ion-card color="light">
+      <ion-card id="{{Artefactoid.params.ID}}">
+      <!-- "/assets/ArtefactosImages/{{Artefactoid.params.ID}}.png" -->
+        <ion-card-header>
+          <ion-card-title align="center">{{DetalleArtefacto.name}}</ion-card-title>
+          <ion-card-subtitle align="center">Rareza Máxima: {{DetalleArtefacto.max_rarity}}</ion-card-subtitle>
+          <ion-card-subtitle align="center"></ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-card>
+    <ion-card color="light">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title align="center">Bonus</ion-card-title>
+          <ion-text [ngSwitch]="Artefactoid.params.ID">
+            <div *ngSwitchCase="'prayers-for-destiny'">
+              <h6 align="center"><b>BONUS DE 1 PIEZA</b></h6>
+              <ion-card-subtitle>{{DetalleArtefacto["1-piece_bonus"]}}</ion-card-subtitle>
+            </div>
+            <div *ngSwitchCase="'prayers-for-illumination'">
+              <h6 align="center"><b>BONUS DE 1 PIEZA</b></h6>
+              <ion-card-subtitle>{{DetalleArtefacto["1-piece_bonus"]}}</ion-card-subtitle>
+            </div>
+            <div *ngSwitchCase="'prayers-for-wisdom'">
+              <h6 align="center"><b>BONUS DE 1 PIEZA</b></h6>
+              <ion-card-subtitle>{{DetalleArtefacto["1-piece_bonus"]}}</ion-card-subtitle>
+            </div>
+            <div *ngSwitchCase="'prayers-to-springtime'">
+              <h6 align="center"><b>BONUS DE 1 PIEZA</b></h6>
+              <ion-card-subtitle>{{DetalleArtefacto["1-piece_bonus"]}}</ion-card-subtitle>
+            </div>
+            <div *ngSwitchCase="'prayers-to-the-firmament'">
+              <h6 align="center"><b>BONUS DE 1 PIEZA</b></h6>
+              <ion-card-subtitle>{{DetalleArtefacto["1-piece_bonus"]}}</ion-card-subtitle>
+            </div>
+            <div *ngSwitchDefault>
+              <h6 align="center"><b>BONUS DE 2 PIEZAS</b></h6>
+              <ion-card-subtitle>{{DetalleArtefacto["2-piece_bonus"]}}</ion-card-subtitle>
+              <h6 align="center"><b>BONUS DE 4 PIEZAS</b></h6>
+              <ion-card-subtitle>{{DetalleArtefacto["4-piece_bonus"]}}</ion-card-subtitle>
+            </div>
+          </ion-text>
+        </ion-card-header>
+      </ion-card>
+    </ion-card>
+  </ion-card>
+</ion-content>

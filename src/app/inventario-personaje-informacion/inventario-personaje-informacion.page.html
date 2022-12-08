@@ -1,0 +1,207 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{DetallePersonaje.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/portrait.png"/>
+      <ion-card id="{{Personajeid.params.ID}}">
+        <ion-card color="light">
+          <ion-card>
+            <ion-card-header >
+              <ion-card-title align="center">{{DetallePersonaje.name}}</ion-card-title>
+              <div [ngSwitch]="Personajeid.params.ID">
+                <div *ngSwitchCase="'traveler-anemo'">
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-aether.png"/>
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-lumine.png"/>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'traveler-dendro'">
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-aether.png"/>
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-lumine.png"/>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'traveler-electro'">
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-aether.png"/>
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-lumine.png"/>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'traveler-geo'">
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-aether.png"/>
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side-lumine.png"/>
+                  </div>
+                </div>
+                <div *ngSwitchDefault>
+                  <div align="center">
+                    <img src="/assets/PersonajesImages/{{Personajeid.params.ID}}/icon-side.png"/>
+                  </div>
+                </div>
+              </div>
+              <ion-card-subtitle align="center">{{DetallePersonaje.title}}</ion-card-subtitle>
+              <ion-card-subtitle align="center">{{DetallePersonaje.affiliation}}</ion-card-subtitle>
+              <div align="center" (click)="goToElementosDetails(DetallePersonaje.vision)">
+                <img src= "/assets/ElementsDetalle/{{DetallePersonaje.vision}}/icon.png"/>
+              </div>
+              <ion-card-subtitle>Vision: {{DetallePersonaje.vision}}</ion-card-subtitle>
+              <ion-card-subtitle>Arma: {{DetallePersonaje.weapon}}</ion-card-subtitle>
+              <ion-card-subtitle>Nacion: {{DetallePersonaje.nation}}</ion-card-subtitle>
+              <ion-card-subtitle>Cumpleaños: {{DetallePersonaje.birthday}}</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-card>
+        <ion-card color="light" (click)="goToPersonajeDetails(Personajeid.params.ID)">
+          <ion-card>
+
+              <ion-button expand="block" color="light" (click)="goToPersonajeDetails(Personajeid.params.ID)">Ver Mas Detalles</ion-button>
+
+          </ion-card>
+        </ion-card>
+        <div [ngSwitch]="armaId">
+          <div *ngSwitchCase="null">
+            <ion-card color="light">
+              <div>
+                <ion-card align="center" id="CardAnimation" color="light" (click)="agregarArma(armaId)">
+                  <ion-card>
+                    <div class="img-container">
+                      <img src="/assets/images/Armas.png"/>
+                    </div>
+                    <ion-card-header>
+                      <ion-card-subtitle>Arma</ion-card-subtitle>
+                    </ion-card-header>
+                  </ion-card>
+                </ion-card>
+              </div>
+            </ion-card>
+          </div>
+          <div *ngSwitchDefault>
+            <ion-card color="light">
+              <div>
+                <ion-card>
+                  <ion-card align="center" (click)="goToArmasDetails(armaId)" id="CardAnimation">
+                    <div class="img-container">
+                      <img src="/assets/ArmasImages/{{armaId}}/icon.png"/>
+                    </div>
+                    <ion-card-header>
+                      <ion-card-title>{{armaId}}</ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                </ion-card>
+              </div>
+              <div align="center">
+                <ion-card>
+                  <ion-button expand="block" (click)="quitarArma()"color="light">Quitar</ion-button>
+                </ion-card>
+              </div>
+            </ion-card>
+          </div>
+        </div>
+        <div [ngSwitch]="artefcatoId">
+          <div *ngSwitchCase="null">
+            <ion-card color="light">
+              <div>
+                <ion-card align="center" id="CardAnimation" color="light" (click)="agregarArtefactos(artefcatoId)">
+                  <ion-card>
+                    <div class="img-container">
+                      <img src="/assets/images/Artefactos.png"/>
+                    </div>
+                    <ion-card-header>
+                      <ion-card-subtitle>Artefactos</ion-card-subtitle>
+                    </ion-card-header>
+                  </ion-card>
+                </ion-card>
+              </div>
+            </ion-card>
+          </div>
+          <div *ngSwitchDefault>
+            <ion-card color="light">
+              <div>
+                <ion-card>
+                  <ion-card align="center" (click)="goToArtefactosDetails(artefcatoId)" id="CardAnimation">
+                    <div class="img-container">
+                      <div [ngSwitch]="artefcatoId">
+                        <div *ngSwitchCase="'prayers-for-destiny'" align="center">
+                          <ion-row>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/circlet-of-logos.png"/>
+                            </ion-col>
+                          </ion-row>
+                        </div>
+                        <div *ngSwitchCase="'prayers-for-illumination'" align="center">
+                          <ion-row>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/circlet-of-logos.png"/>
+                            </ion-col>
+                          </ion-row>
+                        </div>
+                        <div *ngSwitchCase="'prayers-for-wisdom'" align="center">
+                          <ion-row >
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/circlet-of-logos.png"/>
+                            </ion-col>
+                          </ion-row>
+                        </div>
+                        <div *ngSwitchCase="'prayers-to-springtime'" align="center">
+                          <ion-row>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/circlet-of-logos.png"/>
+                            </ion-col>
+                          </ion-row>
+                        </div>
+                        <div *ngSwitchCase="'prayers-to-the-firmament'" align="center">
+                          <ion-row>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/circlet-of-logos.png"/>
+                            </ion-col>
+                          </ion-row>
+                        </div>
+                        <div *ngSwitchDefault>
+                          <ion-row>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/circlet-of-logos.png"/>
+                            </ion-col>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/flower-of-life.png"/>
+                            </ion-col>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/goblet-of-eonothem.png"/>
+                            </ion-col>
+                          </ion-row>
+                          <ion-row>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/plume-of-death.png"/>
+                            </ion-col>
+                            <ion-col>
+                              <img src="/assets/ArtefactosImages/{{artefcatoId}}/sands-of-eon.png"/>
+                            </ion-col>
+                          </ion-row>
+                        </div>  
+                      </div>
+                    </div>
+                    <ion-card-header>
+                      <ion-card-title>{{artefcatoId}}</ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                </ion-card>
+              </div>
+              <div align="center">
+                <ion-card>
+                  <ion-button expand="block" (click)="quitarArtefactos()"color="light">Quitar</ion-button>
+                </ion-card>
+              </div>
+            </ion-card>
+          </div>
+        </div>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

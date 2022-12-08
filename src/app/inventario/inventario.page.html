@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inventario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card [routerLink]="['/inventario-personajes']">
+          <ion-card-header>
+            <div align="center">
+              <img src="/assets/images/Personajes.png"/> 
+            </div>
+            <ion-card-subtitle align="center">Personajes</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card [routerLink]="['/inventario-armas']">
+          <ion-card-header>
+            <div align="center">
+              <img src="/assets/images/Armas.png"/> 
+            </div>            
+            <ion-card-subtitle align="center">Armas</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card [routerLink]="['/inventario-equipos']">
+          <ion-card-header>
+            <div align="center">
+              <img src="/assets/images/Equipos.png"/> 
+            </div>            
+            <ion-card-subtitle align="center">Equipos</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card [routerLink]="['/inventario-artefactos']">
+          <ion-card-header>
+            <div align="center">
+              <img src="/assets/images/Artefactos.png"/> 
+            </div>            
+            <ion-card-subtitle align="center">Artefactos</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card [routerLink]="['/inventario-bestiario']">
+          <ion-card-header>
+            <div align="center">
+              <img src="/assets/images/Bestiario.png"/> 
+            </div>            
+            <ion-card-subtitle align="center">Bestiario</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <div align="center">
+              <img src="/assets/images/Comidas.png"/> 
+            </div>            
+            <ion-card-subtitle align="center">Comidas</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

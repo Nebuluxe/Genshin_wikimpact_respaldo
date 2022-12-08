@@ -1,0 +1,279 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{NumeroEquipo.params.ID}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid align="center">
+    <ion-card id="CardFondo" color="light">
+      <ion-row>
+        <ion-col>
+          <div [ngSwitch]="NombrePersonajeNumero1">
+            <div *ngSwitchCase="null">
+              <ion-card id="CardAnimation" class="card-tamanio" (click)="SeleccionarPersonaje(KeyBdStoragePersonaje1)">
+                <ion-card >
+                  <ion-card-header>
+                    <div align="center">
+                      <img src="/assets/images/LogoPJprovisorio.png"/> 
+                    </div>
+                    <div align="center">
+                      <ion-card-subtitle align="center">Personaje 1</ion-card-subtitle>
+                    </div>
+                  </ion-card-header> 
+                </ion-card>
+              </ion-card>
+            </div>
+            <div *ngSwitchDefault>
+              <ion-card [ngSwitch]="NombrePersonajeNumero1" color="light" >
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero1)">
+                  <div *ngSwitchCase="'traveler-anemo'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero1}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero1}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero1)">
+                  <div *ngSwitchCase="'traveler-dendro'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero1}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero1}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero1)">
+                  <div *ngSwitchCase="'traveler-electro'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero1}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero1}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero1)">
+                  <div *ngSwitchCase="'traveler-geo'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero1}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero1}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card  id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero1)">
+                  <div *ngSwitchDefault>
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero1}}/icon-big.png"  />
+                  </div>
+                </ion-card>
+                <div align="center">
+                  <ion-button (click)="SeleccionarPersonaje(KeyBdStoragePersonaje1)"expand="block" color="light">{{NombrePersonajeNumero1}}</ion-button>
+                </div>
+              </ion-card>
+              <br/>
+            </div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div [ngSwitch]="NombrePersonajeNumero2">
+            <div *ngSwitchCase="null">
+              <ion-card id="CardAnimation" class="card-tamanio" (click)="SeleccionarPersonaje(KeyBdStoragePersonaje2)">
+                <ion-card>
+                  <ion-card-header>
+                    <div align="center">
+                      <img src="/assets/images/LogoPJprovisorio.png"/> 
+                    </div>
+                    <div align="center">
+                      <ion-card-subtitle align="center">Personaje 2</ion-card-subtitle>
+                    </div>
+                  </ion-card-header> 
+                </ion-card>
+              </ion-card>
+            </div>
+            <div *ngSwitchDefault>
+              <ion-card [ngSwitch]="NombrePersonajeNumero2" >
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero2)">
+                  <div *ngSwitchCase="'traveler-anemo'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero2}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero2}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero2)">
+                  <div *ngSwitchCase="'traveler-dendro'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero2}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero2}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero2)">
+                  <div *ngSwitchCase="'traveler-electro'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero2}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero2}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero2)">
+                  <div *ngSwitchCase="'traveler-geo'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero2}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero2}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card  id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero2)">
+                  <div *ngSwitchDefault>
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero2}}/icon-big.png"/>
+                  </div>
+                </ion-card>
+                <div align="center">
+                  <ion-button  (click)="SeleccionarPersonaje(KeyBdStoragePersonaje2)" expand="block" color="light">{{NombrePersonajeNumero2}}</ion-button>
+                </div>
+              </ion-card>
+              <br/>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div [ngSwitch]="NombrePersonajeNumero3">
+            <div *ngSwitchCase="null">
+              <ion-card id="CardAnimation" class="card-tamanio" (click)="SeleccionarPersonaje(KeyBdStoragePersonaje3)">
+                <ion-card>
+                  <ion-card-header>
+                    <div align="center">
+                      <img src="/assets/images/LogoPJprovisorio.png"/> 
+                    </div>
+                    <div align="center">
+                      <ion-card-subtitle align="center">Personaje 3</ion-card-subtitle>
+                    </div>
+                  </ion-card-header> 
+                </ion-card>
+              </ion-card>
+            </div>
+            <div *ngSwitchDefault>
+              <ion-card [ngSwitch]="NombrePersonajeNumero3" >
+                <ion-card id="CardAnimation"  class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero3)">
+                  <div *ngSwitchCase="'traveler-anemo'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero3}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero3}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero3)">
+                  <div *ngSwitchCase="'traveler-dendro'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero3}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero3}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero3)">
+                  <div *ngSwitchCase="'traveler-electro'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero3}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero3}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero3)">
+                  <div *ngSwitchCase="'traveler-geo'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero3}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero3}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card  id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero3)">
+                  <div *ngSwitchDefault>
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero3}}/icon-big.png"/>
+                  </div>
+                </ion-card>
+                <div align="center">
+                  <ion-button   (click)="SeleccionarPersonaje(KeyBdStoragePersonaje3)" expand="block" color="light">{{NombrePersonajeNumero3}}</ion-button>
+                </div>
+              </ion-card>
+              <br/>
+            </div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div [ngSwitch]="NombrePersonajeNumero4">
+            <div *ngSwitchCase="null">
+              <ion-card id="CardAnimation" class="card-tamanio" (click)="SeleccionarPersonaje(KeyBdStoragePersonaje4)">
+                <ion-card>
+                  <ion-card-header>
+                    <div align="center">
+                      <img src="/assets/images/LogoPJprovisorio.png"/> 
+                    </div>
+                    <div align="center">
+                      <ion-card-subtitle align="center">Personaje 4</ion-card-subtitle>
+                    </div>
+                  </ion-card-header> 
+                </ion-card>
+              </ion-card>
+            </div>
+            <div *ngSwitchDefault>
+              <ion-card [ngSwitch]="NombrePersonajeNumero4" >
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero4)">
+                  <div *ngSwitchCase="'traveler-anemo'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero4}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero4}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero4)">
+                  <div *ngSwitchCase="'traveler-dendro'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero4}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero4}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero4)">
+                  <div *ngSwitchCase="'traveler-electro'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero4}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero4}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero4)">
+                  <div *ngSwitchCase="'traveler-geo'">
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero4}}/TravelersPortada.png"/>
+                    <ion-card-header>
+                      <ion-card-subtitle align="center">{{NombrePersonajeNumero4}}</ion-card-subtitle>
+                    </ion-card-header>
+                  </div>
+                </ion-card>
+                <ion-card  id="CardAnimation" class="card-tamanio" (click)="goToProductDetails(NombrePersonajeNumero4)">
+                  <div *ngSwitchDefault>
+                    <img src="/assets/PersonajesImages/{{NombrePersonajeNumero4}}/icon-big.png"/>
+                  </div>
+                </ion-card>
+                <div align="center">
+                  <ion-button expand="block" color="light" (click)="SeleccionarPersonaje(KeyBdStoragePersonaje4)">{{NombrePersonajeNumero4}}</ion-button>
+                </div>
+              </ion-card>
+              <br/>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-card>
+          <ion-button (click)="DeleteAll()"expand="block" color="light">Eliminar</ion-button>
+      </ion-card>
+      <br/>
+    </ion-card>
+  </ion-grid>
+<script>
+  var modal = document.querySelector('ion-modal');
+
+  modal.breakpoints = [0, 0.25, 0.5, 0.75];
+</script>

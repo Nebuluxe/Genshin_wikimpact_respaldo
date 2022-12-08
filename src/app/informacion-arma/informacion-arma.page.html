@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{Armaid.params.ID}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="img-container">
+    <img src= "/assets/ArmasImages/{{Armaid.params.ID}}/icon.png"/>
+  </div>
+  <ion-card id="{{Armaid.params.ID}}">
+    <ion-card color="light">
+      <ion-card >
+        <ion-card-header>
+          <ion-card-title align="center">{{DetalleArma.name}}</ion-card-title>
+          <ion-card-subtitle align="center">Tipo Arma: {{DetalleArma.type}}</ion-card-subtitle>
+          <ion-card-subtitle align="center">Rareza: {{DetalleArma.rarity}}</ion-card-subtitle>
+          <ion-card-subtitle align="center">Ataque Base: {{DetalleArma.baseAttack}} ATK</ion-card-subtitle>
+          <ion-card-subtitle align="center">Sub Estadistica: {{DetalleArma.subStat}}</ion-card-subtitle>
+          <ion-card-subtitle align="center">Se consigue en: {{DetalleArma.location}}</ion-card-subtitle>
+          <ion-card-subtitle align="center">Material de Ascensión: {{DetalleArma.ascensionMaterial}}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-card>
+      <ion-card  color="light">
+        <ion-card align="center">
+          <ion-card-header>
+            <ion-card-title align="center">Pasiva</ion-card-title>
+            <ion-card-subtitle align="center">{{DetalleArma.passiveName}}</ion-card-subtitle>
+            <ion-card-subtitle align="center">Descripción Pasiva: {{DetalleArma.passiveDesc}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-card>
+  </ion-card>
+</ion-content>
+

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bestiario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-searchbar placeholder="Buscar..." animated (ionChange)="BuscadorEnemigos($event)"></ion-searchbar>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-lg="3" size-md="4" size-sm="5" size-xs="6" *ngFor="let item of searcherEnemigos" (click)="goToEnemigosDetails(item)">
+        
+        <ion-card id="CardAnimation"  class="card-tamanio">
+          <div>
+            <img  class="img-tamanio" src="/assets/EnemigosImages/{{item}}/icon.png"/>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle>{{item}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

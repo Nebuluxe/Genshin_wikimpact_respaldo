@@ -1,0 +1,21 @@
+#CardAnimation {
+    margin: 0%;
+}
+
+#CardAnimation:hover {
+    filter: opacity(0.9);
+    transform: scale(1.04);
+}
+
+.card-tamanio{    
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.img-tamanio{
+    height: 150px;
+    width: 100%;
+}
+
+

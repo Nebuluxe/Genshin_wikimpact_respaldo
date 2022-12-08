@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{Elementoid.params.ID}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div class="img-container" align="center">
+    <img src= "/assets/Elementos/{{Elementoid.params.ID}}/icon.png"/>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <ion-card id="{{Elementoid.params.ID}}">
+    <ion-card color="light">
+      <ion-card >
+        <ion-card-header>
+          <div  align="center">
+            <ion-card-title>{{DetalleElemento.name}}</ion-card-title>
+          </div>
+        </ion-card-header>
+      </ion-card>
+    </ion-card>
+      <ion-card  color="light"> 
+            <br/>
+            <div  align="center">
+              <ion-card-title>Reacciones</ion-card-title>
+            </div>
+            <ion-card align="center" *ngFor="let item of DetalleElemento.reactions">
+              <ion-card-header>
+                <div align="center">
+                  <ion-card-title >{{item.name}}</ion-card-title>
+                </div>
+                <br/>
+                <br/>
+                <div align="center">
+                  <ion-card-subtitle >Elmentos:</ion-card-subtitle>
+                </div>
+                <ion-grid >
+                  <ion-row>
+                    <ion-col *ngFor="let item of item.elements">
+                      <div align="center">
+                        <img id="CardAnimation" (click)="goToElementosDetails(item)" src= "/assets/ElementsDetalle/{{item}}/icon.png"/>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <ion-card-subtitle>{{item.description}}</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+      
+      </ion-card>
+  </ion-card>
+</ion-content>
+

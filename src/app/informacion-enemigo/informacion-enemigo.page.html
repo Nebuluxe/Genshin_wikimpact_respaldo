@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{DetalleEnemigo.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="img-container" align="center">
+    <img src= "/assets/EnemigosImages/{{Enemigoid.params.ID}}/portrait.png"/>
+  </div>
+  <ion-card id="{{Enemigoid.params.ID}}">
+    <ion-card color="light">
+      <ion-card >
+        <ion-card-header>
+          <ion-card-title align="center">{{DetalleEnemigo.name}}</ion-card-title>
+          <ion-card-subtitle>Region: {{DetalleEnemigo.region}}</ion-card-subtitle>
+          <ion-card-subtitle>Tipo: {{DetalleEnemigo.type}}</ion-card-subtitle>
+          <ion-card-subtitle>Familia: {{DetalleEnemigo.family}}</ion-card-subtitle>
+          <ion-card-subtitle>Descripcion: {{DetalleEnemigo.description}}</ion-card-subtitle>   
+        </ion-card-header>
+      </ion-card>
+    </ion-card>
+    <ion-card color="light">
+      <ion-card>
+        <div align="center">
+          <br/>
+          <ion-card-title align="center">Elementos</ion-card-title>
+          <ion-grid >
+            <ion-row>
+              <ion-col *ngFor="let item of DetalleEnemigo.elements">
+                <img id="CardAnimation"  (click)="goToElementosDetails(item)" src= "/assets/ElementsDetalle/{{item}}/icon.png"/>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-card>
+    </ion-card>
+
+    <!-- <ion-card *ngIf="DetalleEnemigo.id == whopperflower || DetalleEnemigo.id == slime && list != 0">
+      <div align="center">
+        <ion-card-title align="center">Descripcion Elementos</ion-card-title>
+        <ion-card *ngFor="let item of DescripcionElemental1">
+          <div align="center">
+            <img src= "/assets/ElementsDetalle/{{item.element}}/icon.png"/>
+            <ion-card-title align="center">{{item.element}}</ion-card-title>
+            <ion-card>
+              <ion-card-subtitle>Descripcion: {{item.description}}</ion-card-subtitle>
+            </ion-card> 
+          </div>
+        </ion-card>
+      </div>
+    </ion-card>
+
+    <ion-card *ngIf="DetalleEnemigo.id != whopperflower || DetalleEnemigo.id != slime && list != 0 && DetalleEnemigo != null || DetalleEnemigo != ''">
+      <div align="center">
+        <ion-card-title align="center">Descripcion Elementos</ion-card-title>
+        <ion-card *ngFor="let item of DescripcionElemental2">
+          <div align="center">
+            <img src= "/assets/ElementsDetalle/{{item.element}}/icon.png"/>
+            <ion-card-title align="center">{{item.element}}</ion-card-title>
+            <ion-card>
+              <ion-card-subtitle>Descripcion: {{item.description}}</ion-card-subtitle>
+            </ion-card> 
+          </div>
+        </ion-card>
+      </div>
+    </ion-card> -->
+
+  </ion-card>
+</ion-content>
